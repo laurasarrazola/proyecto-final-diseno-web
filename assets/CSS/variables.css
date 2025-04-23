@@ -1,0 +1,77 @@
+/*Este archivo contiene todas las variables CSS personalizadas definidas en :root, lo que permite:
+
+- Centralizar valores de colores, tipografías, tamaños y estilos.
+- Reutilizarlos de manera consistente en todo el proyecto.
+- Facilitar modificaciones globales: un solo cambio en una variable afecta todo el diseño donde se use*/
+
+:root {
+  /*colores corporativos*/
+  --azul-claro: #00bfff;
+  --azul-oscuro: #000943;
+  --amarillo: #e7c400;
+  --negro: #090a10;
+  --blanco: #ffffff;
+
+  /* Fuentes */
+  --fuente-titulo: "Inter", sans-serif;
+  --fuente-titulo-grande: "Miriam Libre", sans-serif;
+  --fuente-subtitulo: "Montserrat", sans-serif;
+  --fuente-texto-regular: "Montserrat", sans-serif;
+  --fuente-texto-descriptivo: "Montserrat", sans-serif;
+
+  /* Tamaños */
+  --tam-titulo: 1.938em;
+  --tam-titulo-grande: 2.438em;
+  --tam-subtitulo: 1.563em;
+  --tam-texto-regular: 1.25em;
+  --tam-texto-descriptivo: 1em;
+
+  /* Pesos */
+  --peso-titulo-grande: 700;
+  --peso-titulo: 500;
+  --peso-subtitulo: 500;
+  --peso-texto-regular: 400;
+  --peso-texto-descriptivo: 400;
+
+  /*Boton CTA*/
+  --bg-cta-btn: var(--amarillo);
+  --color-cta-btn: var(--negro);
+  --b-cta-btn: 0.063em;
+  --br-cta-btn: 0.4rem;
+  --p-cta-btn: 0.5em 0.75em;
+  --ff-cta-btn: var(--fuente-texto-regular);
+  --fs-cta-btn: var(--tam-texto-descriptivo);
+  --fw-cta-btn: var(--peso-texto-regular);
+  --cursor-cta-btn: pointer;
+  --transition-cta-btn: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  /*Boton color primario*/
+  --bg-prim-btn: transparent;
+  --color-prim-btn: var(--azul-oscuro);
+  --b-prim-btn: 0.063em;
+  --br-prim-btn: 0.4rem;
+  --p-prim-btn: 0.5em 0.75em;
+  --ff-prim-btn: var(--fuente-texto-regular);
+  --fs-prim-btn: var(--tam-texto-descriptivo);
+  --fw-prim-btn: var(--peso-texto-regular);
+  --cursor-prim-btn: pointer;
+  --transition-prim-btn: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  /*Botón color secundario*/
+  --bg-sec-btn: var(--azul-claro);
+  --color-sec-btn: var(--negro);
+  --b-sec-btn: 0.063em;
+  --br-sec-btn: 0.4rem;
+  --p-sec-btn: 0.5em 0.75em;
+  --ff-sec-btn: var(--fuente-texto-regular);
+  --fs-sec-btn: var(--tam-texto-descriptivo);
+  --fw-sec-btn: var(--peso-texto-regular);
+  --cursor-sec-btn: pointer;
+  --transition-cta-btn: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}

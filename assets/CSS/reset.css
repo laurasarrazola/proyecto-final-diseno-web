@@ -1,0 +1,10 @@
+/*El archivo reset.css se utiliza para eliminar los estilos por defecto que los navegadores aplican a los elementos HTML. Cada navegador puede tener valores distintos de márgenes, paddings, bordes, tamaños de fuente, etc., lo que puede causar inconsistencias visuales.*/
+
+*,
+*::before,
+*::after {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
