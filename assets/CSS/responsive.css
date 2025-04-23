@@ -315,3 +315,10 @@
     color: var(--blanco);
   }
 }
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  body {
+    background-color: var(--blanco);
+    color: var(--negro);
+  }
+}
