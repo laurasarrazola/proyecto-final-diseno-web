@@ -722,7 +722,7 @@ input {
     width: 70vw;
     max-width: 280px;
     background: #000;
-    z-index: 3002;
+    z-index: 3002; /* Asegura que el menú hamburguesa esté por encima del overlay */
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
     border-top-right-radius: 12px;
@@ -734,9 +734,11 @@ input {
     display: block;
     /* Márgenes internos para evitar textos pegados a los bordes */
     padding-inline: 1rem;
+    pointer-events: auto; /* Permite interacción con los elementos del menú */
   }
   .navbar-collapse.show {
     transform: translateX(0);
+    pointer-events: auto; /* Permite interacción cuando está abierto */
   }
   /* Overlay para oscurecer el fondo cuando el menú está abierto */
   .navbar-collapse::before {
@@ -744,9 +746,9 @@ input {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 3001;
+    z-index: 3000; /* El overlay queda debajo del menú */
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Permite cerrar el menú al hacer clic fuera, pero no bloquea el menú */
     transition: opacity 0.2s;
     display: none;
   }
@@ -758,9 +760,9 @@ input {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 3001;
+    z-index: 3001; /* Overlay debajo del menú */
     background: transparent;
-    pointer-events: auto;
+    pointer-events: none; /* No bloquea la interacción con el menú */
   }
   /* Lista vertical y tipografía compacta */
   .navbar-nav {
@@ -789,5 +791,14 @@ input {
   }
   #menu-toggle:checked ~ #menu-overlay {
     display: block;
+  }
+  /* Asegura que los elementos internos del menú hamburguesa permitan interacción */
+  .navbar-collapse *,
+  .navbar-collapse .btn,
+  .navbar-collapse button,
+  .navbar-collapse a {
+    pointer-events: auto;
+    z-index: 3003;
+    position: relative;
   }
 }
