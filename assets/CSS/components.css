@@ -424,6 +424,67 @@ Su función principal es mantener el código organizado y escalable, permitiendo
   height: 100%;
 }
 
+/* ================================================================= COMPONENTES FEED ==============================================================================*/
+.profile-icon {
+  color: white;
+}
+
+.sidebar__topic a {
+  text-decoration: none;
+  font-family: var(--fuente-texto-descriptivo);
+  font-size: var(--tam-texto-descriptivo);
+  font-weight: var(--peso-texto-descriptivo);
+  color: var(--azul-claro);
+}
+
+.list-unstyled li {
+  font-family: var(--fuente-texto-descriptivo);
+  font-size: var(--tam-texto-descriptivo);
+  font-weight: var(--peso-texto-descriptivo);
+}
+
+.feed__filters h2 {
+  display: flex;
+  justify-content: center;
+  color: var(--amarillo);
+  font-family: var(--fuente-titulo-grande);
+  font-size: var(--tam-titulo-grande);
+  font-weight: var(--peso-titulo-grande);
+}
+
+.feed__new-post h2 {
+  display: flex;
+  justify-content: center;
+  color: var(--azul-claro);
+  font-family: var(--fuente-titulo-grande);
+  font-size: var(--tam-titulo-grande);
+  font-weight: var(--peso-titulo-grande);
+}
+
+.feed__new-post {
+  border: solid thin var(--azul-claro);
+  padding: 2em;
+  border-radius: 1em;
+}
+
+.feed__post--userinfo {
+  border-bottom: 0.05em solid lightblue;
+  margin-bottom: 1em;
+}
+
+.feed__post--userinfo h5 {
+  margin: 0;
+}
+
+.feed__post--userinfo p {
+  margin: 0;
+}
+
+.feed__post {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+}
+
 /* ================================================================= COMPONENTES DASHBOARD ==============================================================================*/
 /* si */
 .main__search input {
