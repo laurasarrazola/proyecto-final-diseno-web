@@ -712,7 +712,7 @@ input {
   color: var(--blanco);
 }
 
-/* --- MENÚ HAMBURGUESA DESPLEGABLE DESDE LA IZQUIERDA (SOLO EN MÓVIL/TABLET) --- */
+/* --- MENÚ HAMBURGUESA DESPLEGABLE DESDE LA IZQUIERDA --- */
 @media (max-width: 991.98px) {
   .navbar-collapse {
     position: fixed;
@@ -722,7 +722,7 @@ input {
     width: 70vw;
     max-width: 280px;
     background: #000;
-    z-index: 3002; /* Asegura que el menú hamburguesa esté por encima del overlay */
+    z-index: 3002;
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
     border-top-right-radius: 12px;
@@ -732,39 +732,38 @@ input {
     font-family: var(--fuente-texto-descriptivo);
     font-size: 1rem;
     display: block;
-    /* Márgenes internos para evitar textos pegados a los bordes */
     padding-inline: 1rem;
-    pointer-events: auto; /* Permite interacción con los elementos del menú */
+    pointer-events: auto;
   }
   .navbar-collapse.show {
     transform: translateX(0);
-    pointer-events: auto; /* Permite interacción cuando está abierto */
+    pointer-events: auto;
   }
-  /* Overlay para oscurecer el fondo cuando el menú está abierto */
+
   .navbar-collapse::before {
     content: "";
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 3000; /* El overlay queda debajo del menú */
+    z-index: 3000;
     opacity: 1;
-    pointer-events: auto; /* Permite cerrar el menú al hacer clic fuera, pero no bloquea el menú */
+    pointer-events: auto;
     transition: opacity 0.2s;
     display: none;
   }
   .navbar-collapse.show::before {
     display: block;
   }
-  /* Área clickeable fuera del menú para cerrar el panel (solo CSS) */
+  /* Área clickeable fuera del menú para cerrar el panel */
   .navbar-collapse.show:after {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 3001; /* Overlay debajo del menú */
+    z-index: 3001;
     background: transparent;
-    pointer-events: none; /* No bloquea la interacción con el menú */
+    pointer-events: none;
   }
-  /* Lista vertical y tipografía compacta */
+
   .navbar-nav {
     flex-direction: column !important;
     font-size: 1em;
