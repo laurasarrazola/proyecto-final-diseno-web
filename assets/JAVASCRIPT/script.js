@@ -10,15 +10,38 @@ function cerrarModal(id) {
 }
 
 /*Formulario ingreso  */
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const username = document.getElementById("floatingInput").value;
-  const password = document.getElementById("floatingPassword").value;
+    const username = document.getElementById("floatingInput").value;
+    const password = document.getElementById("floatingPassword").value;
 
-  if (username === "laura" && password === "12345") {
-    window.location.href = "/HTML/dashboard.html";
-  } else {
-    alert("Credenciales incorrectas");
+    if (username === "laura" && password === "12345") {
+      window.location.href = "/HTML/dashboard.html";
+    } else {
+      alert("Credenciales incorrectas");
+    }
+  });
+}
+
+// Cierra el menú hamburguesa al hacer clic fuera de él (Bootstrap 5)
+document.addEventListener('click', function (event) {
+  const navbarCollapse = document.getElementById('navbarNav');
+  const menuToggle = document.querySelector('.header__menu-toggle');
+  if (!navbarCollapse || !menuToggle || window.innerWidth >= 992) return;
+  if (
+    navbarCollapse.classList.contains('show') &&
+    !navbarCollapse.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ) {
+    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+      const collapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+      collapse.hide();
+    } else {
+      navbarCollapse.classList.remove('show');
+    }
   }
 });
+

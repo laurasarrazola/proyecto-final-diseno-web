@@ -86,6 +86,115 @@
     width: 100%;
     text-align: center;
   }
+
+  /* --- FEED: FILTROS, NUEVA PUBLICACIÓN Y POSTS RESPONSIVE --- */
+  .feed__filters,
+  .feed__new-post,
+  .feed__post.card {
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 0.7em;
+    font-size: 1em;
+    overflow-wrap: break-word;
+  }
+
+  .feed__filters *,
+  .feed__new-post *,
+  .feed__post.card * {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .feed__filters h2,
+  .feed__new-post h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.7em;
+    text-align: center;
+  }
+
+  .feed__filters form,
+  .feed__filters .row,
+  .feed__filters .form-floating,
+  .feed__filters .form-control,
+  .feed__filters .form-select,
+  .feed__new-post form,
+  .feed__new-post .form-control,
+  .feed__new-post .form-select,
+  .feed__new-post textarea,
+  .feed__new-post button {
+    width: 100%;
+    min-width: 0;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+
+  .feed__filters .form-control,
+  .feed__filters .form-select,
+  .feed__new-post .form-control,
+  .feed__new-post .form-select,
+  .feed__new-post textarea {
+    padding: 0.5em 0.7em;
+    margin-bottom: 0.5em;
+  }
+
+  .feed__filters button,
+  .feed__new-post button {
+    font-size: 1em;
+    padding: 0.7em 0;
+    margin-top: 0.5em;
+  }
+
+  .feed__post.card {
+    margin-top: 0.7em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 0.7em;
+    font-size: 1em;
+  }
+
+  .feed__post.card h5,
+  .feed__post.card h6,
+  .feed__post.card p {
+    font-size: 1em;
+    word-break: break-word;
+  }
+
+  .feed__post.card .d-flex button {
+    font-size: 0.95em;
+    padding: 0.5em 0.7em;
+    min-width: 90px;
+  }
+
+  .feed__post--userinfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3em;
+    font-size: 1em;
+  }
+
+  .feed__container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+
+  .feed__content {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* aplican cuando el ancho de la pantalla está entre 576px y 767.98px*/
@@ -149,6 +258,18 @@
     width: 100%;
     text-align: center;
   }
+
+  .feed__container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    box-sizing: border-box;
+  }
 }
 
 /*aplican cuando el ancho de la pantalla está entre 768px y 991.98px. */
@@ -210,6 +331,11 @@
   .panel__card {
     width: 48%;
   }
+
+  .feed__container {
+    width: 80%;
+    margin: 0, auto;
+  }
 }
 
 /*aplican cuando el ancho de la pantalla está entre 992px y 1199.98px. */
@@ -265,6 +391,11 @@
   .panel__card {
     width: 48%;
   }
+
+  .feed__container {
+    width: 80%;
+    margin: 0, auto;
+  }
 }
 
 /* xl: ≥1200px */
@@ -306,6 +437,11 @@
     font-family: var(--fuente-texto-regular);
     font-size: var(--tam-texto-regular);
     font-weight: var(--peso-texto-regular);
+  }
+
+  .feed__container {
+    width: 80%;
+    margin: 0, auto;
   }
 }
 
