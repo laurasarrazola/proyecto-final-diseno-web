@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servitech principal</title>
+    <!--acceso a estilos y clases Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- acceso a iconos bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!--acceso a las fuentes de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Miriam+Libre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- acceso a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="/assets/CSS/variables.css" />
+    <link rel="stylesheet" href="/assets/CSS/reset.css" />
+    <link rel="stylesheet" href="/assets/CSS/base.css" />
+    <link rel="stylesheet" href="/assets/CSS/components.css" />
+    <link rel="stylesheet" href="/assets/CSS/responsive.css" />
+    <link rel="stylesheet" href="/assets/CSS/buscarExpertos.css">
+
+    <!-- acceso a JS -->
+    <script src="/assets/JAVASCRIPT/script.js" defer></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex justify-content-around align-items-center">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="/assets/Imágenes/LOGO-SERVITECH-DARKMODE.webp" alt="Ir a la página principal de Servitech"
+                        class="logo__image" />
+                </a>
+
+                <!-- menú hamburguesa para dispositivos móviles -->
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- menú de navegación -->
+                <div class="collapse navbar-collapse justify-content-between align-items-center w-100" id="navbarNav">
+                    <ul class="header__nav-list navbar-nav mx-auto d-flex justify-content-center">
+                        <li class="header__nav-item nav-item">
+                            <a class="header__nav-link nav-link mb-0" href="#">Inicio</a>
+                        </li>
+                        <li class="header__nav-item nav-item">
+                            <a class="header__nav-link nav-link my-0" href="#">Expertos</a>
+                        </li>
+                        <li class="header__nav-item nav-item">
+                            <a class="header__nav-link nav-link mt-0" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex gap-2 header__actions">
+                    <button type="button" class="btn--cta" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">
+                        Iniciar sesión
+                    </button>
+                    <!-- data-bs-toggle Indica qué tipo de componente Bootstrap se va a activar cuando se haga clic. -->
+                    <!--data-bs-target Indica a qué elemento HTML se le va a aplicar la acción, usando el id-->
+
+                    <button type="button" class="btn--secondary" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+                        Registrarse
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-section">
+        <div class="container">
+            <!-- Buscador de expertos -->
+            <div class="search-container">
+                <h1 class="search-title">Encuentra tu Experto</h1>
+
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="searchName">
+                            <i class="bi bi-search me-2"></i>
+                            Busca por nombre o especialización
+                        </label>
+                        <input type="text" id="searchName" class="form-control" placeholder="Ingresa tu búsqueda..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hourlyRate">
+                            <i class="bi bi-currency-dollar me-2"></i>
+                            Precio por hora
+                        </label>
+                        <input type="number" id="hourlyRate" class="form-control" placeholder="Ingresa el precio..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">
+                            <i class="bi bi-calendar3 me-2"></i>
+                            Disponibilidad
+                        </label>
+                        <select id="availability" class="form-select">
+                            <option value="">Selecciona...</option>
+                            <option value="diurna">Diurna</option>
+                            <option value="nocturna">Nocturna</option>
+                            <option value="fin-semana">Fin de semana</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group rating-container">
+                        <label>
+                            <i class="bi bi-star me-2"></i>
+                            Puntuación mínima
+                        </label>
+                        <div class="stars">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star star"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="search-btn">
+                        <i class="bi bi-search me-2"></i>
+                        Buscar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Grid de expertos -->
+            <div class="experts-grid">
+                <!-- Experto 1 -->
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experto 2 -->
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-half star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experto 3 -->
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experto 4 -->
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experto 5 -->
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experto 5 -->
+
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #666;"></i>
+                        </div>
+                        <h3 class="expert-name">Camilo Martínez Fernández</h3>
+                        <div class="expert-rating">
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star"></i>
+                        </div>
+                        <span class="expert-badge">Experto servitech</span>
+                    </div>
+                    <div class="expert-body">
+                        <h4 class="expert-title">Experto en Desarrollo y edición, especializado en:</h4>
+                        <div class="expert-tags">
+                            <span class="tag">Backend</span>
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Bases de datos</span>
+                        </div>
+                        <div class="expert-actions">
+                            <button class="btn-contratar">Contratar</button>
+                            <button class="btn-perfil">Ver perfil</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <footer class="footer pt-5">
+                        <div class="footer__content row">
+                            <div class="col-6 col-md-4 mb-4">
+                                <h5>LEGAL</h5>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a href="#" class="footer__link p-0 ms-0">Condiciones de uso</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="footer__link p-0 ms-0">
+                                            Política de privacidad</a>
+                                    </li>
+                                    <li class="nav-item mb-2">
+                                        <a href="#" class="footer__link p-0 ms-0">
+                                            Política de cookies</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-md-2 mb-3">
+                                <h5>SOPORTE</h5>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a href="#" class="footer__link p-0 ms-0">Preguntas frecuentes</a>
+                                    </li>
+                                    <li class="nav-item mb-2">
+                                        <a href="#" class="footer__link p-0 ms-0">Contactar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column flex-sm-row justify-content-between">
+                            <p>&copy; 2025 Orange. Todos los derechos reservados.</p>
+                        </div>
+                    </footer>
+                </div>
+
+                <!--acceso a Bootstrap-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                    crossorigin="anonymous"></script>
+
+</body>
